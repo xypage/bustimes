@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>UC Merced Bus Schedule</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="gutter">
+      <!-- "before" as in before route choice is submitted -->
+      <div class="main-container" id="before">
+        <div class="option-container">
+          <div class="from-container containers">
+            <p class="labels">Pick-Up Location</p>
+            <select
+              class="select-css"
+              name="pickUp"
+              id="pickUp"
+              required
+            ></select>
+          </div>
+          <div class="to-container containers">
+            <p class="labels">Drop-Off Destination</p>
+            <select
+              class="select-css"
+              name="dropOff"
+              id="dropOff"
+              required
+            ></select>
+          </div>
+        </div>
+        <div class="submit-container">
+          <button id="submit" class="button" type="button">Find routes.</button>
+        </div>
+      </div>
+      <!-- "after" they submit, initially hidden, shows the routes they can take -->
+      <div class="main-container" id="after">
+        <button id="back" class="button" type="button">Back</button>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="busTimes.js"></script>
+  <script type="text/javascript" src="stops.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+</html>

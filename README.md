@@ -1,0 +1,1 @@
+The bus schedules are a little frustrating to go between so I made a really basic site that lets you put where you're getting on the bus and where you want to get off and (assuming there's a bus that connects those two) it tells you all the lines/times you can use. If there's any issues make sure you let me know!
