@@ -71,7 +71,7 @@ function getRoute(from, to) {
         missedPickups = busesWithStops[i][from].splice(0, j);
       }
     }
-    //same thing as aboce but the "to" side instead of the "from" side
+    //same thing as above but the "to" side instead of the "from" side
     currStop = busesWithStops[i][to];
     for (let j = 0; j < currStop.length; j++) {
       if (
