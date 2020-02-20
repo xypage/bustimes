@@ -22,21 +22,25 @@ stops.forEach(stop => {
 });
 
 //gets list of all buses running today
-let date = getDateTime();
+//initially both of these were evaluated right now but I shifted it to evaluate on button click 
+//since it's lightweight and I don't want it to be cached, want it to refresh every button press to make sure it never keeps a date from before
 let todaysBuses = [];
-busTimes.forEach(route => {
-  if (route.days.includes(date[0])) todaysBuses.push(route);
-});
+let date;
 
 //when button is pressed, route from a-b
 let button = document.getElementById("submit");
 button.addEventListener("click", function() {
+  date = getDateTime();
+  busTimes.forEach(route => {
+    if (route.days.includes(date[0])) todaysBuses.push(route);
+  });
   let from = pickUpSelect.selectedOptions[0].value;
   let to = dropOffSelect.selectedOptions[0].value;
   getRoute(from, to);
 });
 
 function getRoute(from, to) {
+
   let busesWithStops = [];
   console.log(from, to);
   console.log(todaysBuses);
