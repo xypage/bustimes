@@ -128,7 +128,20 @@ function displayRoutes(buses, from, to) {
         if(minute < 10) {
           minute = "0" + minute;
         }
-        fromTD.innerText = bus[from][i][0] + ":" + minute;
+        let hour = bus[from][i][0];
+        let am;
+        if (hour == 0 || hour == 24) {
+          am = " AM";
+          hour = 12;
+        } else if(hour > 12) {
+          am = " PM";
+          hour -= 12;
+        } else {
+          am = " AM";
+        }
+
+        
+        fromTD.innerText = hour + ":" + minute + am;
       }
 
       let toTD = document.createElement("td");
@@ -137,7 +150,18 @@ function displayRoutes(buses, from, to) {
         if(minute < 10) {
           minute = "0" + minute;
         }
-        toTD.innerText = bus[to][i][0] + ":" + minute;
+        let hour = bus[to][i][0];
+        let am;
+        if (hour == 0 || hour == 24) {
+          am = " AM";
+          hour = 12;
+        } else if(hour > 12) {
+          am = " PM";
+          hour -= 12;
+        } else {
+          am = " AM";
+        }
+        toTD.innerText = hour + ":" + minute + am;
       }
 
       let row = document.createElement("tr");
